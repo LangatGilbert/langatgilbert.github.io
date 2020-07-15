@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+  <head>
+  
+  
+    
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"0ebf1aaaa2","applicationID":"222469971","transactionName":"NFJVN0VVXxEFUhEIDg0YcRZZV0ULC19KAgAIQ0IQaENUABdYEQRPAVtYBBlCWAcTQl8xDhBDcwZDVVgOSlYAFQ==","queueTime":0,"applicationTime":267,"agent":""}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the basics of Django Rest Framework, which enables you to build RESTful APIs for Django.">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/png" href="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/images/favicon-152.png">
+
+    
+
+    
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary_large_image" />
+
+      <meta property="og:title" content="Basics of Django Rest Framework | Caktus Group" />
+      <meta property="og:url" content="http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/" />
+      <meta property="og:image" content="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/blog-images/drf-logo2.png" />
+
+      
+        
+      
+      <meta property="og:description" content="Learn the basics of Django Rest Framework, which enables you to build RESTful APIs for Django." />
+      <meta name="twitter:description" content="Learn the basics of Django Rest Framework, which enables you to build RESTful APIs for Django." />
+
+      <meta name="twitter:image" content="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/blog-images/drf-logo2.png" />
+
+    
+
+    
+    
+  
+    <link rel="alternate" type="application/rss+xml"
+          href="/feeds/main/" title="Caktus Blog" />
+  
+
+
+    <title>Basics of Django Rest Framework | Caktus Group</title>
+
+    
+      <link rel="stylesheet" type="text/css" media="all" href="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/css/bundle.css?rev=f501b35d">
+
+      
+    
+    
+    
+      <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    
+    
+
+    
+    
+    
+
+    
+
+    
+      
+        <!-- Google Analytics Script -->
+        <script type="text/javascript">
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-15492387-4', 'auto');
+          ga('send', 'pageview');
+        </script>
+      
+    
+    
+      
+        <!-- Global site tag (gtag.js) - Google AdWords -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1061434655"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', 'AW-1061434655');
+        </script>
+      
+    
+    
+      
+    
+  
+</head>
+
+  <body id="post_detail" class="">
+  
+    
+        
+
+    <!-- Begin Navbar -->
+    <div id="nav" class="navbar" role="navigation">
+      
+        <div class="wrapper">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="/">
+              <img src="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/images/caktus-logo-426x234.png"/>
+            </a>
+          </div>
+          <nav class="navbar-caktus navbar-off">
+              <ul class="nav navbar-nav">
+                <li><a class="service-page" href="/services/">Services <span class="fa"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="10px" height="10px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;"
+	 xml:space="preserve">
+	 <title>Angle Down</title>
+<g>
+	<path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441
+		L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082
+		c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647
+		c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>
+</g>
+</svg>
+</span></a>
+                  <ul>
+                    <li><a href="/services/#section-service-types">Service types</a></li>
+                    <li><a href="/services/#section-areas-of-expertise">Areas of expertise</a></li>
+                    <li><a href="/services/#section-pricing">Pricing</a></li>
+                  </ul>
+                </li>
+                <li><a class="our-work" href="/casestudies/">Our work <span class="fa"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="10px" height="10px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;"
+	 xml:space="preserve">
+	 <title>Angle Down</title>
+<g>
+	<path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441
+		L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082
+		c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647
+		c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>
+</g>
+</svg>
+</span></a>
+                  <ul>
+                    <li><a href="/casestudies/#section-case-studies">Case studies</a></li>
+                    <li><a href="/casestudies/#section-client-feedback">Client feedback</a></li>
+                  </ul>
+                </li>
+                <li><a class="about-us" href="/about/">About us <span class="fa"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="10px" height="10px" viewBox="0 0 284.929 284.929" style="enable-background:new 0 0 284.929 284.929;"
+	 xml:space="preserve">
+	 <title>Angle Down</title>
+<g>
+	<path d="M282.082,76.511l-14.274-14.273c-1.902-1.906-4.093-2.856-6.57-2.856c-2.471,0-4.661,0.95-6.563,2.856L142.466,174.441
+		L30.262,62.241c-1.903-1.906-4.093-2.856-6.567-2.856c-2.475,0-4.665,0.95-6.567,2.856L2.856,76.515C0.95,78.417,0,80.607,0,83.082
+		c0,2.473,0.953,4.663,2.856,6.565l133.043,133.046c1.902,1.903,4.093,2.854,6.567,2.854s4.661-0.951,6.562-2.854L282.082,89.647
+		c1.902-1.903,2.847-4.093,2.847-6.565C284.929,80.607,283.984,78.417,282.082,76.511z"/>
+</g>
+</svg>
+</span></a>
+                  <ul>
+                    <li><a href="/about/#section-open-source">Open source</a></li>
+                    <li><a href="/about/#section-community-participation">Community engagement</a></li>
+                    <li><a href="/about/#section-press">Press</a></li>
+                    <li><a href="/ebooks/">Ebooks</a></li>
+                    <li><a href="/about/#section-charitable-giving">Charitable giving</a></li>
+                    <li><a href="/about/#section-our-team">Team</a></li>
+                  </ul>
+                </li>
+                <li><a class="careers" href="/careers/">Careers</a></li>
+                <li><a class="posts" href="/blog/">Blog</a></li>
+                <li class="focus"><a class="contact" href="/contact/">Contact</a></li>
+              </ul>
+          </nav>
+        </div>
+      
+    </div><!-- /end Navbar -->
+
+    <div id="wrap">
+      <main id="main-content">
+        
+        <div class="container">
+          
+          
+          
+        </div>
+        
+
+        
+          
+        
+        
+<!-- TOPIC, TITLE, TAGS -->
+
+<div class="spacer"></div>
+
+<div class="full white-bg cushion-sides underline-link">
+  <div class="reading-wrapper tags">
+  <h4 class="blue">
+    <a href="javascript:history.back()" class="dark-blue"><span class="fa"><?xml version="1.0" encoding="utf-8"?><!-- Generator: Adobe Illustrator 20.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  --><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="6.5px" height="11.1px" viewBox="0 0 6.5 11.1" style="enable-background:new 0 0 6.5 11.1;" xml:space="preserve"><title>Angle Left</title><path d="M6.5,0.9c0,0.1,0,0.2-0.1,0.3L2,5.6L6.4,10c0.1,0.1,0.1,0.2,0.1,0.3c0,0.1,0,0.2-0.1,0.3L5.8,11c-0.1,0.1-0.2,0.1-0.3,0.1
+	c-0.1,0-0.2,0-0.3-0.1L0.1,5.8C0,5.8,0,5.7,0,5.6s0-0.2,0.1-0.3l5.2-5.2C5.4,0,5.5,0,5.6,0c0.1,0,0.2,0,0.3,0.1l0.6,0.6
+	C6.5,0.7,6.5,0.8,6.5,0.9z"/></svg></span>
+        Back to blog</a>
+  </h4>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<div class="full white-bg cushion-sides underline-link">
+  <div class="reading-wrapper tags">
+    <h4 class="dark-blue">
+      
+        <a class="dark-blue" href="/blog/categories/technical/">Technical</a>
+        
+      
+    </h4>
+
+    <h1 class="dark-blue">Basics of Django Rest Framework</h1>
+
+    
+      <span class="blue"><?xml version="1.0" encoding="utf-8"?>
+<svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Tag</title><path d="M576 448q0-53-37.5-90.5t-90.5-37.5-90.5 37.5-37.5 90.5 37.5 90.5 90.5 37.5 90.5-37.5 37.5-90.5zm1067 576q0 53-37 90l-491 492q-39 37-91 37-53 0-90-37l-715-716q-38-37-64.5-101t-26.5-117v-416q0-52 38-90t90-38h416q53 0 117 26.5t102 64.5l715 714q37 39 37 91z"/></svg></span>&thinsp;
+      <ul class="blue">
+        
+          <li><a class="blue" href="/blog/tags/django/">django</a>, </li>
+        
+          <li><a class="blue" href="/blog/tags/api/">API</a></li>
+        
+      </ul>
+    
+  </div>
+
+
+
+
+<!-- AUTHOR & SOCIAL SHARE -->
+
+
+
+  <div class="reading-wrapper">
+    <div class="blog-detail full">
+      <div class="full authors">
+          
+            <div class="inlineblock">
+              
+               
+                
+                    <img alt="Charlotte Mays"
+                         class="staff_photos" src="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/thumbnail-cache/40/b2/40b28fc5c40c628e3e331534389c5790.jpg" />
+                
+              
+              
+                <h5>
+                  Charlotte Mays
+                </h5>
+              
+              
+            </div>
+          
+      </div>
+      <div class="full date-and-social">
+          <h5 class="grey">février 26, 2018
+          </h5>
+          <div class="detail-page-social-media-holder">
+            <div class="post-social-media-icon-bundle">
+              
+                
+                  
+
+<div class="card-common--social-media">
+<!-- Twitter -->
+<a target="_blank" href="https://twitter.com/intent/tweet?text=Basics%20of%20Django%20Rest%20Framework&tw_p=tweetbutton&url=http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/"><span class="fa"><svg version="1.1" id="svg_twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 449.956 449.956" style="enable-background:new 0 0 449.956 449.956;"
+	 xml:space="preserve">
+	 <title>Twitter</title>
+<g>
+	<path d="M449.956,85.657c-17.702,7.614-35.408,12.369-53.102,14.279c19.985-11.991,33.503-28.931,40.546-50.819
+		c-18.281,10.847-37.787,18.268-58.532,22.267c-18.274-19.414-40.73-29.125-67.383-29.125c-25.502,0-47.246,8.992-65.24,26.98
+		c-17.984,17.987-26.977,39.731-26.977,65.235c0,6.851,0.76,13.896,2.284,21.128c-37.688-1.903-73.042-11.372-106.068-28.407
+		C82.46,110.158,54.433,87.46,31.403,59.101c-8.375,14.272-12.564,29.787-12.564,46.536c0,15.798,3.711,30.456,11.138,43.97
+		c7.422,13.512,17.417,24.455,29.98,32.831c-14.849-0.572-28.743-4.475-41.684-11.708v1.142c0,22.271,6.995,41.824,20.983,58.674
+		c13.99,16.848,31.645,27.453,52.961,31.833c-7.995,2.091-16.086,3.138-24.269,3.138c-5.33,0-11.136-0.475-17.416-1.42
+		c5.9,18.459,16.75,33.633,32.546,45.535c15.799,11.896,33.691,18.028,53.677,18.418c-33.498,26.262-71.66,39.393-114.486,39.393
+		c-8.186,0-15.607-0.373-22.27-1.139c42.827,27.596,90.03,41.394,141.612,41.394c32.738,0,63.478-5.181,92.21-15.557
+		c28.746-10.369,53.297-24.267,73.665-41.686c20.362-17.415,37.925-37.448,52.674-60.097c14.75-22.651,25.738-46.298,32.977-70.946
+		c7.23-24.653,10.848-49.344,10.848-74.092c0-5.33-0.096-9.325-0.287-11.991C421.785,120.202,437.202,104.306,449.956,85.657z"/>
+</g>
+</svg>
+</span></a>
+
+&ensp;
+
+<!-- LinkedIn -->
+<a target="_blank" href="https://www.linkedin.com/cws/share?url=http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/"><span class="fa"><svg version="1.1" id="svg_linkedin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 438.536 438.535" style="enable-background:new 0 0 438.536 438.535;"
+	 xml:space="preserve">
+	 <title>LinkedIn</title>
+<g>
+	<g>
+		<rect x="5.424" y="145.895" width="94.216" height="282.932"/>
+		<path d="M408.842,171.739c-19.791-21.604-45.967-32.408-78.512-32.408c-11.991,0-22.891,1.475-32.695,4.427
+			c-9.801,2.95-18.079,7.089-24.838,12.419c-6.755,5.33-12.135,10.278-16.129,14.844c-3.798,4.337-7.512,9.389-11.136,15.104
+			v-40.232h-93.935l0.288,13.706c0.193,9.139,0.288,37.307,0.288,84.508c0,47.205-0.19,108.777-0.572,184.722h93.931V270.942
+			c0-9.705,1.041-17.412,3.139-23.127c4-9.712,10.037-17.843,18.131-24.407c8.093-6.572,18.13-9.855,30.125-9.855
+			c16.364,0,28.407,5.662,36.117,16.987c7.707,11.324,11.561,26.98,11.561,46.966V428.82h93.931V266.664
+			C438.529,224.976,428.639,193.336,408.842,171.739z"/>
+		<path d="M53.103,9.708c-15.796,0-28.595,4.619-38.4,13.848C4.899,32.787,0,44.441,0,58.529c0,13.891,4.758,25.505,14.275,34.829
+			c9.514,9.325,22.078,13.99,37.685,13.99h0.571c15.99,0,28.887-4.661,38.688-13.99c9.801-9.324,14.606-20.934,14.417-34.829
+			c-0.19-14.087-5.047-25.742-14.561-34.973C81.562,14.323,68.9,9.708,53.103,9.708z"/>
+	</g>
+</g>
+</svg>
+</span></a>
+
+&ensp;
+
+<!-- Facebook -->
+<a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/"><span class="fa"><svg version="1.1" id="svg_facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 470.513 470.513" style="enable-background:new 0 0 470.513 470.513;"
+	 xml:space="preserve">
+	 <title>Facebook</title>
+<g>
+	<path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853
+		c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691
+		c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/>
+</g>
+</svg>
+</span></a>
+</div>
+
+                
+              
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- LEADING IMAGE -->
+  <div class="full white-bg">
+    <div class="blog-image-wrapper">
+      <img alt="The logo for Django Rest Framework." src="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/blog-images/drf-logo2.png">
+    </div>
+  </div>
+
+<!-- DATE & BODY COPY -->
+<div class="full row white-bg cushion-sides">
+  <div id="blog-text" class="reading-wrapper">
+    <h3>What Is Django Rest Framework?</h3>
+<p><a href="http://www.django-rest-framework.org/">Django Rest Framework</a> (DRF) is a library which works with standard Django models to build a flexible and powerful API for your project.</p>
+<h3>Basic Architecture</h3>
+<p>A DRF API is composed of 3 layers: the serializer, the viewset, and the router. </p>
+<ul>
+<li>Serializer: converts the information stored in the database and defined by the <a href="https://docs.djangoproject.com/en/2.0/topics/db/models/">Django models</a> into a format which is more easily transmitted via an API</li>
+<li>Viewset: defines the functions (read, create, update, delete) which will be available via the API</li>
+<li>Router: defines the URLs which will provide access to each viewset
+<img alt="A graphic depicting the layers of a Django Rest Framework API." class="img-responsive" src="https://caktus-website-production-2015.s3.amazonaws.com/media/images/All/drf_architecture.jpg"/></li>
+</ul>
+<h3>Serializers</h3>
+<p>Django models intuitively represent data stored in your database, but an API will need to transmit information in a less complex structure. While your data will be represented as instances of your <code>Model</code> classes in your Python code, it needs to be translated into a format like JSON in order to be communicated over an API. </p>
+<p>The DRF serializer handles this translation. When a user submits information (such as creating a new instance) through the API, the serializer takes the data, validates it, and converts it into something Django can slot into a <code>Model</code> instance. Similarly, when a user accesses information via the API the relevant instances are fed into the serializer, which parses them into a format that can easily be fed out as JSON to the user.</p>
+<p>The most common form that a DRF serializer will take is one that is tied directly to a Django model:</p>
+<pre>
+  <code>
+class ThingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Thing
+        fields = (‘name’, )
+  </code>
+</pre>
+<p>Setting <code>fields</code> allows you to specify exactly which fields are accessible using this serializer. Alternatively, <code>exclude</code> can be set instead of <code>fields</code>, which will include all of the model’s fields except those listed in <code>exclude</code>.</p>
+<p>Serializers are an incredibly flexible and powerful component of DRF. While attaching a serializer to a model is the most common use, serializers can be used to make any kind of Python data structure available via the API according to defined parameters.</p>
+<h3>ViewSets</h3>
+<p>A given serializer will parse information in both directions (reads and writes), but the ViewSet is where the available operations are defined. The most common ViewSet is the ModelViewSet, which has the following built-in operations:</p>
+<ul>
+<li>Create an instance: <code>create()</code></li>
+<li>Retrieve/Read an instance: <code>retrieve()</code></li>
+<li>Update an instance (all fields or only selected fields): <code>update()</code> or <code>partial_update()</code></li>
+<li>Destroy/Delete an instance: <code>destroy()</code></li>
+<li>List instances (paginated by default): <code>list()</code></li>
+</ul>
+<p>Each of these associated functions can be overwritten if different behavior is desired, but the standard functionality works with minimal code, as follows:</p>
+<pre>
+  <code>
+class ThingViewSet(viewsets.ModelViewSet):
+    queryset = Thing.objects.all()
+    serializer_class = ThingSerializer
+  </code>
+</pre>
+<p>If you need more customization, you can use generic viewsets instead of the <code>ModelViewSet</code> or even individual custom views.</p>
+<h3>Routers</h3>
+<p>Finally, the router provides the surface layer of your API. To avoid creating endless “list”, “detail” and “edit” URLs, the DRF routers bundle all the URLs needed for a given viewset into one line per viewset, like so:</p>
+<pre>
+  <code>
+# Initialize the DRF router; only once per urls.py file from rest_framework import routers`
+router = routers.DefaultRouter()
+
+# Register the viewset
+router.register(r'thing', main_api.ThingViewSet)
+  </code>
+</pre>
+<p>Then, all of the viewsets you registered with the router can be added to the usual <code>url_patterns</code>:</p>
+<p><code>url_patterns += url(r'^', include(router.urls))</code></p>
+<p>And you’re up and running! Your API can now be accessed just like any of your other django pages. Next, you’ll want to make sure people can find out how to use it.</p>
+<h3>Documentation</h3>
+<p>While all code benefits from good documentation, this is even more crucial for a public-facing API, since APIs can’t be browsed the same way a user interface can. Fortunately, DRF can use the logic of your API code to automatically generate an entire tree of API documentation, with just a single addition to your Django url_patterns:</p>
+<p><code>url(r'^docs/', include_docs_urls(title='My API')),</code></p>
+<h3>Where next?</h3>
+<p>With just that <a href="https://github.com/caktus/drf-sample">simple code</a>, you can add an API layer to an existing Django project. Leveraging the power of an API enables you to build great add-ons to your existing apps, or empowers your users to build their own niche functionality that exponentially increases the value of what you already provide. For more information about getting started with APIs and Django Rest Framework, check out <a href="https://www.caktusgroup.com/talks/write-api-almost-anything-video/">this talk</a>.</p>
+  </div>
+</div>
+
+
+  <!-- CTA Button -->
+  <div class="white-bg cta-holder center">
+    <!--HubSpot Call-to-Action Code --><span class="hs-cta-wrapper" id="hs-cta-wrapper-71427a9f-f564-4f65-a1c5-a6f7852d655e"><span class="hs-cta-node hs-cta-71427a9f-f564-4f65-a1c5-a6f7852d655e" id="hs-cta-71427a9f-f564-4f65-a1c5-a6f7852d655e"><!--[if lte IE 8]><div id="hs-cta-ie-element"></div><![endif]--><a href="https://cta-redirect.hubspot.com/cta/redirect/1883108/71427a9f-f564-4f65-a1c5-a6f7852d655e" ><img class="hs-cta-img" id="hs-cta-img-71427a9f-f564-4f65-a1c5-a6f7852d655e" style="border-width:0px;" src="https://no-cache.hubspot.com/cta/default/1883108/71427a9f-f564-4f65-a1c5-a6f7852d655e.png"  alt="New Call-to-action"/></a></span><script charset="utf-8" src="https://js.hscta.net/cta/current.js"></script><script type="text/javascript"> hbspt.cta.load(1883108, '71427a9f-f564-4f65-a1c5-a6f7852d655e', {}); </script></span><!-- end HubSpot Call-to-Action Code -->
+  </div>
+
+
+<!-- The Show/Hide Disqus Comments button -->
+<div class="white-bg center">
+  <a id='toggle-disqus-container' class="hollow-button-blue-fill">
+    <!-- Div with the word "Show"; it will be removed and replaced with a div with the word "Hide" when a user clicks on it -->
+    <div id="div-with-show" style="display:inline-block">Show</div>
+    <div id="toggle-disqus" style="display:inline-block">Comments</div>
+  </a>
+</div>
+
+<!-- DISQUS Block -->
+
+
+<div class="full row white-bg">
+  <div class="reading-wrapper cushion-sides">
+    
+      
+      
+      <div id="disqus_thread"></div>
+<script type="text/javascript">
+/* <![CDATA[ */
+
+	var disqus_shortname = 'wwwcaktusblog';
+	var disqus_url = "http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/";
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+/* ]]> */
+</script>
+<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="//disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+  </div>
+</div>
+
+
+<!-- RELATED POSTS, List Style -->
+
+<!-- Using an inclusion tag to load the related posts and resources -->
+
+
+<div class="full green-bg">
+  <div class="reading-wrapper cushion-sides underline-link">
+    <div class="full">
+      <br>
+      <h4 class="heavy-type center">You might also like:</h4>
+      <!-- Related Posts -->
+      <div class="half row cushion-ends" id="related-posts">
+        <p class="heavy-type">Posts:</p>
+        
+          
+            <!-- Relevant Post -->
+            <div class="related-post-card">
+              <h4><a class="white" href="/blog/2019/03/01/django-recommended-reading/">Django: Recommended Reading</a></h4>
+              <a class="white" href="/blog/2019/03/01/django-recommended-reading/">Technical</a>&ensp; <span class="fa white"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="6.5px" height="11.1px" viewBox="0 0 6.5 11.1" style="enable-background:new 0 0 6.5 11.1;" xml:space="preserve">
+<title>Angle Right</title>
+<path d="M6.5,5.6c0,0.1,0,0.2-0.1,0.3L1.2,11c-0.1,0.1-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1l-0.6-0.6C0,10.4,0,10.3,0,10.2
+	C0,10.1,0,10,0.1,10l4.4-4.4L0.1,1.2C0,1.1,0,1,0,0.9s0-0.2,0.1-0.3l0.6-0.6C0.7,0,0.8,0,0.9,0s0.2,0,0.3,0.1l5.2,5.2
+	C6.5,5.4,6.5,5.5,6.5,5.6z"/>
+</svg>
+</span>&ensp;
+              <a class="white" href="/blog/2019/03/01/django-recommended-reading/">1 mars 2019</a>
+            </div>
+          
+            <!-- Relevant Post -->
+            <div class="related-post-card">
+              <h4><a class="white" href="/blog/2019/02/01/creating-api-endpoint-django-rest-framework/">A Guide To Creating An API Endpoint With Django Rest Framework</a></h4>
+              <a class="white" href="/blog/2019/02/01/creating-api-endpoint-django-rest-framework/">Technical</a>&ensp; <span class="fa white"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="6.5px" height="11.1px" viewBox="0 0 6.5 11.1" style="enable-background:new 0 0 6.5 11.1;" xml:space="preserve">
+<title>Angle Right</title>
+<path d="M6.5,5.6c0,0.1,0,0.2-0.1,0.3L1.2,11c-0.1,0.1-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1l-0.6-0.6C0,10.4,0,10.3,0,10.2
+	C0,10.1,0,10,0.1,10l4.4-4.4L0.1,1.2C0,1.1,0,1,0,0.9s0-0.2,0.1-0.3l0.6-0.6C0.7,0,0.8,0,0.9,0s0.2,0,0.3,0.1l5.2,5.2
+	C6.5,5.4,6.5,5.5,6.5,5.6z"/>
+</svg>
+</span>&ensp;
+              <a class="white" href="/blog/2019/02/01/creating-api-endpoint-django-rest-framework/">1 février 2019</a>
+            </div>
+          
+            <!-- Relevant Post -->
+            <div class="related-post-card">
+              <h4><a class="white" href="/blog/2019/03/07/why-we-love-wagtail/">Why We Love Wagtail (and You Should, Too)</a></h4>
+              <a class="white" href="/blog/2019/03/07/why-we-love-wagtail/">Our Services</a>&ensp; <span class="fa white"><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="6.5px" height="11.1px" viewBox="0 0 6.5 11.1" style="enable-background:new 0 0 6.5 11.1;" xml:space="preserve">
+<title>Angle Right</title>
+<path d="M6.5,5.6c0,0.1,0,0.2-0.1,0.3L1.2,11c-0.1,0.1-0.2,0.1-0.3,0.1s-0.2,0-0.3-0.1l-0.6-0.6C0,10.4,0,10.3,0,10.2
+	C0,10.1,0,10,0.1,10l4.4-4.4L0.1,1.2C0,1.1,0,1,0,0.9s0-0.2,0.1-0.3l0.6-0.6C0.7,0,0.8,0,0.9,0s0.2,0,0.3,0.1l5.2,5.2
+	C6.5,5.4,6.5,5.5,6.5,5.6z"/>
+</svg>
+</span>&ensp;
+              <a class="white" href="/blog/2019/03/07/why-we-love-wagtail/">7 mars 2019</a>
+            </div>
+          
+        
+      </div>
+
+      <!---Related Resources--->
+      <div class="half row cushion-ends" id="related-resources">
+        <p class="heavy-type">Resources:</p>
+        
+          
+            <!-- Relevant Resource -->
+            <div class="related-post-card">
+              <h4>
+                <a class="white" href="/talks/automated-problem-reporting/">Teach Your Sites to Call for Help: Automated Problem Reporting for Online Services</a>
+              </h4>
+              <a class="white" href="/talks/automated-problem-reporting/">Talk</a>
+            </div>
+          
+            <!-- Relevant Resource -->
+            <div class="related-post-card">
+              <h4>
+                <a class="white" href="/talks/write-api-almost-anything-video/">Write an API for Almost Anything: The Amazing Power and Flexibility of Django Rest Framework (Video)</a>
+              </h4>
+              <a class="white" href="/talks/write-api-almost-anything-video/">Talk</a>
+            </div>
+          
+            <!-- Relevant Resource -->
+            <div class="related-post-card">
+              <h4>
+                <a class="white" href="/talks/#books-section">Django 1.1 Testing and Debugging</a>
+              </h4>
+              <a class="white" href="/talks/#books-section">Book</a>
+            </div>
+          
+        
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+        <!-- END OF THE ROAD -->
+      </main><!-- /end mainContent -->
+
+
+      
+    </div><!-- /end wrap -->
+
+    
+    <footer id="footer" class="full footer">
+      <div class="wrapper">
+        <div class="half">
+
+          <div class="half">
+              
+    <div><h3>Follow us</h3></div>
+
+
+            <p>
+              <a href="mailto:solutions@caktusgroup.com" target="_blank">solutions@caktusgroup.com</a>
+            </p>
+            <p>
+              T 919-951-0052
+              <br>
+              F 919-928-5516
+            </p>
+            
+              <p>
+                108 Morris St, Suite 2<br>
+                
+                Durham, NC 27701<br>
+              </p>
+            
+          </div>
+
+          <div class="half site-map">
+              
+    <div><h3>Quick links</h3></div>
+
+
+            <ul>
+              <li><a href="/services/">Services</a></li>
+              <li><a href="/casestudies/">Our work</a></li>
+              <li><a href="/about/">About us</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/careers/">Careers</a></li>
+              <li><a href="/events/">Events</a></li>
+              <li><a href="/talks/">Talks</a></li>
+              <li><a href="/ebooks/">Ebooks</a></li>
+              <li><a href="/press/">Press</a></li>
+              <li><a href="/contact/">Contact</a></li>
+            </ul>
+          </div>
+        </div><!--End first half-->
+
+        <div class="half">
+          <div class="half newsletter-sign-up">
+            
+               
+    <div><h3>Newsletter</h3></div>
+
+
+              <form action="/subscribe/"
+                    method="post" class="newsletter-form form-inline" novalidate>
+                <input type='hidden' name='csrfmiddlewaretoken' value='un0Ui9u8UjitBAL88J2xZZuolfrJORrFWDecHRORtKTaDRniBm1ubGchME4Cc5aR' />
+                <div style="display: none;">
+  <label>
+    Leave this blank to prove your humanity:
+    <input type="text" name="body" value="" />
+  </label>
+</div>
+
+                <ul class="errors list-unstyled"></ul>
+                <label class="sr-only" for="id_email">
+                  Email address
+                </label>
+                <div class="sign-up-container">
+                  <span class="icon">
+                    <button type="submit" aria-label="Submit">
+                      <span class="fa grey"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 511.626 511.627;"
+	 xml:space="preserve">
+	 <title>Envelope</title>
+<g>
+	<path d="M498.208,68.235c-8.945-8.947-19.701-13.418-32.261-13.418H45.682c-12.562,0-23.318,4.471-32.264,13.418
+		C4.471,77.18,0,87.935,0,100.499v310.633c0,12.566,4.471,23.312,13.418,32.257c8.945,8.953,19.701,13.422,32.264,13.422h420.266
+		c12.56,0,23.315-4.469,32.261-13.422c8.949-8.945,13.418-19.697,13.418-32.257V100.499
+		C511.626,87.935,507.158,77.18,498.208,68.235z M475.078,411.125c0,2.475-0.903,4.616-2.714,6.424
+		c-1.81,1.81-3.949,2.706-6.42,2.706H45.679c-2.474,0-4.616-0.896-6.423-2.706c-1.809-1.808-2.712-3.949-2.712-6.424V191.858
+		c6.09,6.852,12.657,13.134,19.7,18.843c51.012,39.209,91.553,71.374,121.627,96.5c9.707,8.186,17.607,14.561,23.697,19.13
+		c6.09,4.571,14.322,9.185,24.694,13.846c10.373,4.668,20.129,6.991,29.265,6.991h0.287h0.284c9.134,0,18.894-2.323,29.263-6.991
+		c10.376-4.661,18.613-9.274,24.701-13.846c6.089-4.569,13.99-10.944,23.698-19.13c30.074-25.126,70.61-57.291,121.624-96.5
+		c7.043-5.708,13.613-11.991,19.694-18.843V411.125L475.078,411.125z M475.078,107.92v3.14c0,11.229-4.421,23.745-13.271,37.543
+		c-8.851,13.798-18.419,24.792-28.691,32.974c-36.74,28.936-74.897,59.101-114.495,90.506c-1.14,0.951-4.474,3.757-9.996,8.418
+		c-5.514,4.668-9.894,8.241-13.131,10.712c-3.241,2.478-7.471,5.475-12.703,8.993c-5.236,3.518-10.041,6.14-14.418,7.851
+		c-4.377,1.707-8.47,2.562-12.275,2.562h-0.284h-0.287c-3.806,0-7.895-0.855-12.275-2.562c-4.377-1.711-9.185-4.333-14.417-7.851
+		c-5.231-3.519-9.467-6.516-12.703-8.993c-3.234-2.471-7.614-6.044-13.132-10.712c-5.52-4.661-8.854-7.467-9.995-8.418
+		c-39.589-31.406-77.75-61.57-114.487-90.506c-27.981-22.076-41.969-49.106-41.969-81.083c0-2.472,0.903-4.615,2.712-6.421
+		c1.809-1.809,3.949-2.714,6.423-2.714h420.266c1.52,0.855,2.854,1.093,3.997,0.715c1.143-0.385,1.998,0.331,2.566,2.138
+		c0.571,1.809,1.095,2.664,1.57,2.57c0.477-0.096,0.764,1.093,0.859,3.571c0.089,2.473,0.137,3.718,0.137,3.718V107.92
+		L475.078,107.92z"/>
+</g>
+</svg>
+</span>
+                    </button>
+                  </span>
+                  <input type="email" value="" name="email"
+                         style="border: none" id="id_email" class="form-control"
+                         placeholder="youremail@email.com" required />
+                   <input type="hidden" name="page_name" id="id_page_name" />
+                </div>
+              </form>
+              <div class="newsletter-info">
+                
+    <div>Get tips, see case studies, and stay up to date on Caktus news. <a href="https://learn.caktusgroup.com/newsletter" style="font-weight: bold;">Learn more.</a></div>
+
+
+              </div>
+            
+            <p>
+              <a href="https://www.iubenda.com/privacy-policy/91739120">Privacy Policy</a>
+            </p>
+            <p>
+              <a href="https://www.iubenda.com/privacy-policy/91739120/cookie-policy">Cookie Policy</a>
+            </p>
+          </div>
+
+          <div class="half social-media">
+            <div id="socialicons" class="socialicons">
+              
+    <div><h3>Follow us</h3></div>
+
+
+              <ul>
+                
+                <li>
+                  <a href="https://twitter.com/caktusgroup" target="_blank">
+                    
+                      <span class="fa grey"><svg version="1.1" id="svg_twitter" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 449.956 449.956" style="enable-background:new 0 0 449.956 449.956;"
+	 xml:space="preserve">
+	 <title>Twitter</title>
+<g>
+	<path d="M449.956,85.657c-17.702,7.614-35.408,12.369-53.102,14.279c19.985-11.991,33.503-28.931,40.546-50.819
+		c-18.281,10.847-37.787,18.268-58.532,22.267c-18.274-19.414-40.73-29.125-67.383-29.125c-25.502,0-47.246,8.992-65.24,26.98
+		c-17.984,17.987-26.977,39.731-26.977,65.235c0,6.851,0.76,13.896,2.284,21.128c-37.688-1.903-73.042-11.372-106.068-28.407
+		C82.46,110.158,54.433,87.46,31.403,59.101c-8.375,14.272-12.564,29.787-12.564,46.536c0,15.798,3.711,30.456,11.138,43.97
+		c7.422,13.512,17.417,24.455,29.98,32.831c-14.849-0.572-28.743-4.475-41.684-11.708v1.142c0,22.271,6.995,41.824,20.983,58.674
+		c13.99,16.848,31.645,27.453,52.961,31.833c-7.995,2.091-16.086,3.138-24.269,3.138c-5.33,0-11.136-0.475-17.416-1.42
+		c5.9,18.459,16.75,33.633,32.546,45.535c15.799,11.896,33.691,18.028,53.677,18.418c-33.498,26.262-71.66,39.393-114.486,39.393
+		c-8.186,0-15.607-0.373-22.27-1.139c42.827,27.596,90.03,41.394,141.612,41.394c32.738,0,63.478-5.181,92.21-15.557
+		c28.746-10.369,53.297-24.267,73.665-41.686c20.362-17.415,37.925-37.448,52.674-60.097c14.75-22.651,25.738-46.298,32.977-70.946
+		c7.23-24.653,10.848-49.344,10.848-74.092c0-5.33-0.096-9.325-0.287-11.991C421.785,120.202,437.202,104.306,449.956,85.657z"/>
+</g>
+</svg>
+</span>
+                    
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="https://github.com/caktus" target="_blank">
+                    
+                      <span class="fa grey"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;"
+	 xml:space="preserve">
+	 <title>Github</title>
+<g>
+	<path d="M409.132,114.573c-19.608-33.596-46.205-60.194-79.798-79.8C295.736,15.166,259.057,5.365,219.271,5.365
+		c-39.781,0-76.472,9.804-110.063,29.408c-33.596,19.605-60.192,46.204-79.8,79.8C9.803,148.168,0,184.854,0,224.63
+		c0,47.78,13.94,90.745,41.827,128.906c27.884,38.164,63.906,64.572,108.063,79.227c5.14,0.954,8.945,0.283,11.419-1.996
+		c2.475-2.282,3.711-5.14,3.711-8.562c0-0.571-0.049-5.708-0.144-15.417c-0.098-9.709-0.144-18.179-0.144-25.406l-6.567,1.136
+		c-4.187,0.767-9.469,1.092-15.846,1c-6.374-0.089-12.991-0.757-19.842-1.999c-6.854-1.231-13.229-4.086-19.13-8.559
+		c-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559
+		c-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-0.951-2.568-2.098-3.711-3.429c-1.142-1.331-1.997-2.663-2.568-3.997
+		c-0.572-1.335-0.098-2.43,1.427-3.289c1.525-0.859,4.281-1.276,8.28-1.276l5.708,0.853c3.807,0.763,8.516,3.042,14.133,6.851
+		c5.614,3.806,10.229,8.754,13.846,14.842c4.38,7.806,9.657,13.754,15.846,17.847c6.184,4.093,12.419,6.136,18.699,6.136
+		c6.28,0,11.704-0.476,16.274-1.423c4.565-0.952,8.848-2.383,12.847-4.285c1.713-12.758,6.377-22.559,13.988-29.41
+		c-10.848-1.14-20.601-2.857-29.264-5.14c-8.658-2.286-17.605-5.996-26.835-11.14c-9.235-5.137-16.896-11.516-22.985-19.126
+		c-6.09-7.614-11.088-17.61-14.987-29.979c-3.901-12.374-5.852-26.648-5.852-42.826c0-23.035,7.52-42.637,22.557-58.817
+		c-7.044-17.318-6.379-36.732,1.997-58.24c5.52-1.715,13.706-0.428,24.554,3.853c10.85,4.283,18.794,7.952,23.84,10.994
+		c5.046,3.041,9.089,5.618,12.135,7.708c17.705-4.947,35.976-7.421,54.818-7.421s37.117,2.474,54.823,7.421l10.849-6.849
+		c7.419-4.57,16.18-8.758,26.262-12.565c10.088-3.805,17.802-4.853,23.134-3.138c8.562,21.509,9.325,40.922,2.279,58.24
+		c15.036,16.18,22.559,35.787,22.559,58.817c0,16.178-1.958,30.497-5.853,42.966c-3.9,12.471-8.941,22.457-15.125,29.979
+		c-6.191,7.521-13.901,13.85-23.131,18.986c-9.232,5.14-18.182,8.85-26.84,11.136c-8.662,2.286-18.415,4.004-29.263,5.146
+		c9.894,8.562,14.842,22.077,14.842,40.539v60.237c0,3.422,1.19,6.279,3.572,8.562c2.379,2.279,6.136,2.95,11.276,1.995
+		c44.163-14.653,80.185-41.062,108.068-79.226c27.88-38.161,41.825-81.126,41.825-128.906
+		C438.536,184.851,428.728,148.168,409.132,114.573z"/>
+</g>
+</svg>
+</span>
+                    
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="https://www.facebook.com/CaktusGroup" target="_blank">
+                    
+                      <span class="fa grey"><svg version="1.1" id="svg_facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 470.513 470.513" style="enable-background:new 0 0 470.513 470.513;"
+	 xml:space="preserve">
+	 <title>Facebook</title>
+<g>
+	<path d="M271.521,154.17v-40.541c0-6.086,0.28-10.8,0.849-14.13c0.567-3.335,1.857-6.615,3.859-9.853
+		c1.999-3.236,5.236-5.47,9.706-6.708c4.476-1.24,10.424-1.858,17.85-1.858h40.539V0h-64.809c-37.5,0-64.433,8.897-80.803,26.691
+		c-16.368,17.798-24.551,44.014-24.551,78.658v48.82h-48.542v81.086h48.539v235.256h97.362V235.256h64.805l8.566-81.086H271.521z"/>
+</g>
+</svg>
+</span>
+                    
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="https://plus.google.com/105062754987823868923" target="_blank">
+                    
+                      <span class="fa grey"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 475.092 475.092" style="enable-background:new 0 0 475.092 475.092;"
+	 xml:space="preserve">
+	 <title>Google Plus</title>
+<g>
+	<g>
+		<path d="M273.372,302.498c-5.041-6.762-10.608-13.045-16.7-18.842c-6.091-5.804-12.183-11.088-18.271-15.845
+			c-6.092-4.757-11.659-9.329-16.702-13.709c-5.042-4.374-9.135-8.945-12.275-13.702c-3.14-4.757-4.711-9.61-4.711-14.558
+			c0-6.855,2.19-13.278,6.567-19.274c4.377-5.996,9.707-11.799,15.986-17.417c6.28-5.617,12.559-11.753,18.844-18.415
+			c6.276-6.665,11.604-15.465,15.985-26.412c4.373-10.944,6.563-23.458,6.563-37.542c0-16.75-3.713-32.835-11.136-48.25
+			c-7.423-15.418-17.89-27.412-31.405-35.976h38.54L303.2,0H178.441c-17.699,0-35.498,1.906-53.384,5.72
+			c-26.453,5.9-48.723,19.368-66.806,40.397C40.171,67.15,31.129,90.99,31.129,117.637c0,28.171,10.138,51.583,30.406,70.233
+			c20.269,18.649,44.585,27.978,72.945,27.978c5.71,0,12.371-0.478,19.985-1.427c-0.381,1.521-1.043,3.567-1.997,6.136
+			s-1.715,4.62-2.286,6.14c-0.57,1.521-1.047,3.375-1.425,5.566c-0.382,2.19-0.571,4.428-0.571,6.71
+			c0,12.563,6.086,26.744,18.271,42.541c-14.465,0.387-28.737,1.67-42.825,3.86c-14.084,2.19-28.833,5.616-44.252,10.28
+			c-15.417,4.661-29.217,11.42-41.396,20.27c-12.182,8.854-21.317,19.366-27.408,31.549C3.533,361.559,0.01,374.405,0.01,386.017
+			c0,12.751,2.857,24.314,8.565,34.69c5.708,10.369,13.035,18.842,21.982,25.406c8.945,6.57,19.273,12.083,30.978,16.562
+			c11.704,4.47,23.315,7.659,34.829,9.562c11.516,1.903,22.888,2.854,34.119,2.854c51.007,0,90.981-12.464,119.909-37.397
+			c26.648-23.223,39.971-50.062,39.971-80.517c0-10.855-1.57-20.984-4.712-30.409C282.51,317.337,278.42,309.254,273.372,302.498z
+			 M163.311,198.722c-9.707,0-18.937-2.475-27.694-7.426c-8.757-4.95-16.18-11.374-22.27-19.273
+			c-6.088-7.898-11.418-16.796-15.987-26.695c-4.567-9.896-7.944-19.792-10.135-29.692c-2.19-9.895-3.284-19.318-3.284-28.265
+			c0-18.271,4.854-33.974,14.562-47.108c9.705-13.134,23.411-19.701,41.112-19.701c12.563,0,23.935,3.899,34.118,11.704
+			c10.183,7.804,18.177,17.701,23.984,29.692c5.802,11.991,10.277,24.407,13.417,37.257c3.14,12.847,4.711,24.983,4.711,36.403
+			c0,19.036-4.139,34.317-12.419,45.833C195.144,192.964,181.775,198.722,163.311,198.722z M242.251,413.123
+			c-5.23,8.949-12.319,15.94-21.267,20.981c-8.946,5.048-18.509,8.758-28.693,11.14c-10.183,2.385-20.889,3.572-32.12,3.572
+			c-12.182,0-24.27-1.431-36.258-4.284c-11.99-2.851-23.459-7.187-34.403-12.991c-10.944-5.8-19.795-13.798-26.551-23.982
+			c-6.757-10.184-10.135-21.744-10.135-34.69c0-11.419,2.568-21.601,7.708-30.55c5.142-8.945,11.709-16.084,19.702-21.408
+			c7.994-5.332,17.319-9.713,27.979-13.131c10.66-3.433,20.937-5.808,30.833-7.139c9.895-1.335,19.985-1.995,30.262-1.995
+			c6.283,0,11.043,0.191,14.277,0.567c1.143,0.767,4.043,2.759,8.708,5.996s7.804,5.428,9.423,6.57
+			c1.615,1.137,4.567,3.326,8.85,6.563c4.281,3.237,7.327,5.661,9.135,7.279c1.803,1.618,4.421,4.045,7.849,7.279
+			c3.424,3.237,5.948,6.043,7.566,8.422c1.615,2.378,3.616,5.28,5.996,8.702c2.38,3.433,4.043,6.715,4.998,9.855
+			c0.948,3.142,1.854,6.567,2.707,10.277c0.855,3.72,1.283,7.569,1.283,11.57C250.105,393.713,247.487,404.182,242.251,413.123z"/>
+		<polygon points="401.998,73.089 401.998,0 365.449,0 365.449,73.089 292.358,73.089 292.358,109.636 365.449,109.636 
+			365.449,182.725 401.998,182.725 401.998,109.636 475.081,109.636 475.081,73.089 		"/>
+	</g>
+</g>
+</svg>
+</span>
+                    
+                  </a>
+                </li>
+              
+                <li>
+                  <a href="https://www.linkedin.com/company/caktus-consulting-group-llc" target="_blank">
+                    
+                      <span class="fa grey"><svg version="1.1" id="svg_linkedin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 438.536 438.535" style="enable-background:new 0 0 438.536 438.535;"
+	 xml:space="preserve">
+	 <title>LinkedIn</title>
+<g>
+	<g>
+		<rect x="5.424" y="145.895" width="94.216" height="282.932"/>
+		<path d="M408.842,171.739c-19.791-21.604-45.967-32.408-78.512-32.408c-11.991,0-22.891,1.475-32.695,4.427
+			c-9.801,2.95-18.079,7.089-24.838,12.419c-6.755,5.33-12.135,10.278-16.129,14.844c-3.798,4.337-7.512,9.389-11.136,15.104
+			v-40.232h-93.935l0.288,13.706c0.193,9.139,0.288,37.307,0.288,84.508c0,47.205-0.19,108.777-0.572,184.722h93.931V270.942
+			c0-9.705,1.041-17.412,3.139-23.127c4-9.712,10.037-17.843,18.131-24.407c8.093-6.572,18.13-9.855,30.125-9.855
+			c16.364,0,28.407,5.662,36.117,16.987c7.707,11.324,11.561,26.98,11.561,46.966V428.82h93.931V266.664
+			C438.529,224.976,428.639,193.336,408.842,171.739z"/>
+		<path d="M53.103,9.708c-15.796,0-28.595,4.619-38.4,13.848C4.899,32.787,0,44.441,0,58.529c0,13.891,4.758,25.505,14.275,34.829
+			c9.514,9.325,22.078,13.99,37.685,13.99h0.571c15.99,0,28.887-4.661,38.688-13.99c9.801-9.324,14.606-20.934,14.417-34.829
+			c-0.19-14.087-5.047-25.742-14.561-34.973C81.562,14.323,68.9,9.708,53.103,9.708z"/>
+	</g>
+</g>
+</svg>
+</span>
+                    
+                  </a>
+                </li>
+              
+              </ul>
+            </div>
+
+            <div class="twitter-feed">
+              <a class="twitter-timeline" href="https://twitter.com/caktusgroup" data-widget-id=616657501325541376 data-tweet-limit="1" data-chrome="noheader noborders transparent nofooter"></a>
+              <script>!function(d,s,id)
+                {var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+                  if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+                    fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+              </script>
+            </div>
+          </div>
+        </div><!--End second half-->
+      </div><!--End wrapper-->
+    </footer>
+    
+
+    
+      <div class="modal fade" id="newsletter-modal" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only">Close</span>
+              </button>
+              <h4>Success!</h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+
+    
+      <script src="https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/js/bundle.js?rev=f501b35d"></script>
+      
+        <script type="text/javascript">
+        var _iub = _iub || [];
+        _iub.csConfiguration =
+        { cookiePolicyId: 91739120, siteId: 1020454, lang: "en" }
+
+        ;
+        </script>
+        <script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
+    
+    
+
+
+<!--Newsletter signup popup-->
+<div class="newsletter-popup">
+    <form action="/subscribe/" method="post" class="newsletter-popup-form form-inline" novalidate>
+        <label>Subscribe to our newsletter</label> 
+        <input type='hidden' name='csrfmiddlewaretoken' value='un0Ui9u8UjitBAL88J2xZZuolfrJORrFWDecHRORtKTaDRniBm1ubGchME4Cc5aR' />
+        <div style="display: none;">
+  <label>
+    Leave this blank to prove your humanity:
+    <input type="text" name="body" value="" />
+  </label>
+</div>
+
+        <ul class="errors list-unstyled"></ul>
+        <label class="sr-only" for="id_email">
+            Email address
+        </label>
+        <div class="sign-up-container">
+            <button type="submit" class="fa grey icon" style="background:none; border:none" aria-label="Submit">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="20px" height="20px" viewBox="0 0 511.626 511.627" style="enable-background:new 0 0 511.626 511.627;"
+	 xml:space="preserve">
+	 <title>Envelope</title>
+<g>
+	<path d="M498.208,68.235c-8.945-8.947-19.701-13.418-32.261-13.418H45.682c-12.562,0-23.318,4.471-32.264,13.418
+		C4.471,77.18,0,87.935,0,100.499v310.633c0,12.566,4.471,23.312,13.418,32.257c8.945,8.953,19.701,13.422,32.264,13.422h420.266
+		c12.56,0,23.315-4.469,32.261-13.422c8.949-8.945,13.418-19.697,13.418-32.257V100.499
+		C511.626,87.935,507.158,77.18,498.208,68.235z M475.078,411.125c0,2.475-0.903,4.616-2.714,6.424
+		c-1.81,1.81-3.949,2.706-6.42,2.706H45.679c-2.474,0-4.616-0.896-6.423-2.706c-1.809-1.808-2.712-3.949-2.712-6.424V191.858
+		c6.09,6.852,12.657,13.134,19.7,18.843c51.012,39.209,91.553,71.374,121.627,96.5c9.707,8.186,17.607,14.561,23.697,19.13
+		c6.09,4.571,14.322,9.185,24.694,13.846c10.373,4.668,20.129,6.991,29.265,6.991h0.287h0.284c9.134,0,18.894-2.323,29.263-6.991
+		c10.376-4.661,18.613-9.274,24.701-13.846c6.089-4.569,13.99-10.944,23.698-19.13c30.074-25.126,70.61-57.291,121.624-96.5
+		c7.043-5.708,13.613-11.991,19.694-18.843V411.125L475.078,411.125z M475.078,107.92v3.14c0,11.229-4.421,23.745-13.271,37.543
+		c-8.851,13.798-18.419,24.792-28.691,32.974c-36.74,28.936-74.897,59.101-114.495,90.506c-1.14,0.951-4.474,3.757-9.996,8.418
+		c-5.514,4.668-9.894,8.241-13.131,10.712c-3.241,2.478-7.471,5.475-12.703,8.993c-5.236,3.518-10.041,6.14-14.418,7.851
+		c-4.377,1.707-8.47,2.562-12.275,2.562h-0.284h-0.287c-3.806,0-7.895-0.855-12.275-2.562c-4.377-1.711-9.185-4.333-14.417-7.851
+		c-5.231-3.519-9.467-6.516-12.703-8.993c-3.234-2.471-7.614-6.044-13.132-10.712c-5.52-4.661-8.854-7.467-9.995-8.418
+		c-39.589-31.406-77.75-61.57-114.487-90.506c-27.981-22.076-41.969-49.106-41.969-81.083c0-2.472,0.903-4.615,2.712-6.421
+		c1.809-1.809,3.949-2.714,6.423-2.714h420.266c1.52,0.855,2.854,1.093,3.997,0.715c1.143-0.385,1.998,0.331,2.566,2.138
+		c0.571,1.809,1.095,2.664,1.57,2.57c0.477-0.096,0.764,1.093,0.859,3.571c0.089,2.473,0.137,3.718,0.137,3.718V107.92
+		L475.078,107.92z"/>
+</g>
+</svg>
+
+            </button>
+            <input type="email" value="" name="email" id="" class="form-control" placeholder="youremail@email.com" required />
+            <input type="hidden" name="popup_page_name" id="id_popup_page_name" />
+        </div>
+        <span class="fa close"><?xml version="1.0" encoding="utf-8"?>
+<svg width="20px" height="20px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Times</title><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"/></svg></span>
+    </form>
+</div>
+
+<!--Success message popup-->
+
+<div class="newsletter-popup-success">
+    <span class="fa"><?xml version="1.0" encoding="utf-8"?>
+<svg width="40px" height="40px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Check</title><path d="M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z"/></svg></span>  <h3>Success!</h3>  
+    <div class="message">
+    </div>
+    <span class="fa close"><?xml version="1.0" encoding="utf-8"?>
+<svg width="20px" height="20px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Times</title><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"/></svg></span>
+</div>
+
+<!--Already subscribed message popup-->
+
+<div class="newsletter-popup-already-subscribed">
+    <h3>You're already subscribed</h3>
+    <div class="message">
+    </div>
+    <span class="fa close"><?xml version="1.0" encoding="utf-8"?>
+<svg width="20px" height="20px" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><title>Times</title><path d="M1490 1322q0 40-28 68l-136 136q-28 28-68 28t-68-28l-294-294-294 294q-28 28-68 28t-68-28l-136-136q-28-28-28-68t28-68l294-294-294-294q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294 294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68l-294 294 294 294q28 28 28 68z"/></svg></span>
+</div>
+
+  
+<!-- For posts that we want to have a pretty box in the Google search results. -->
+
+<script type="application/ld+json">
+  {
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "headline": "Basics of Django Rest Framework",
+  "datePublished": "2018-02-26T09:30:00-05:00",
+  "dateModified": "2018-02-21T10:58:57.316807-05:00",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caktus Group",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/static/images/caktus-logo_110x60.png",
+      "height": 60,
+      "width": 110
+    }
+  },
+  "mainEntityOfPage": "http://www.caktusgroup.com/blog/2018/02/26/basics-django-rest-framework/",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Charlotte Mays",
+      "image": "https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/team/Charlotte_M_2016.jpg"
+    }
+  ],
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://cw-production-assetsbucket-8j84s7jns7p2.s3.amazonaws.com/media/blog-images/drf-logo2.png",
+    "height": 466,
+    "width": 700
+  }
+}
+</script>
+
+  
+
+  
+    
+
+
+  
+    <!-- Start of Async HubSpot Analytics Code -->
+    <script type="text/javascript">
+      (function(d,s,i,r) {
+        if (d.getElementById(i)){return;}
+        var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+        n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/1883108.js';
+        e.parentNode.insertBefore(n, e);
+      })(document,"script","hs-analytics",300000);
+    </script>
+    <!-- End of Async HubSpot Analytics Code -->
+  
+
+  
+    <!-- Start of Adroll Code -->
+      <script type="text/javascript">
+          adroll_adv_id = "4SXKCPWKKVFL7CGO4ABFGD";
+          adroll_pix_id = "S3NXO4MKCNCNTJCTD7FQ3F";
+
+          (function () {
+              var _onload = function(){
+                  if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+                  if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+                  var scr = document.createElement("script");
+                  var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+                  scr.setAttribute('async', 'true');
+                  scr.type = "text/javascript";
+                  scr.src = host + "/j/roundtrip.js";
+                  ((document.getElementsByTagName('head') || [null])[0] ||
+                      document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+              };
+              if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+              else {window.attachEvent('onload', _onload)}
+          }());
+      </script>
+    <!-- End of Adroll Code -->
+  
+  </body>
+</html>
