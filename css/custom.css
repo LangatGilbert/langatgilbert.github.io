@@ -225,7 +225,7 @@ header .social-icon li a {
 /* start home */
 #home {
 	/* background: linear-gradient(135deg,#208379 20%,#051514 80%); */
-	background: url('../images/big-data-science.jpg') no-repeat;
+	background: url('../images/data.jpg') no-repeat;
 	/* background-color: #a89932; */
 	background-size: cover;
 	padding-top: 160px;
