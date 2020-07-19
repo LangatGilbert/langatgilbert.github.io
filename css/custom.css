@@ -12,7 +12,7 @@ body {
 }
 
 a {
-	color: #e9b628;  
+	color: #116fe9;  
 	/* #47C6F8; */
 }
 /* .social-buttons . { */
@@ -29,7 +29,7 @@ h2 {
 }
 
 h2 span {
-	color: #e9b628;
+	color: #116fe9;
 	font-weight: bold;
 }
 
@@ -40,7 +40,7 @@ h2 span {
 #team,
 #service,
 #portfolio,
-#blog,
+#contact,
 #cv {
 	padding: 40px;
 }
@@ -150,7 +150,7 @@ header {
 }
 
 header .fa {
-	color: #e9b628;
+	color: #116fe9;
 }
 
 header span {
@@ -194,7 +194,7 @@ header .social-icon li a {
 	height: 70px;
 	line-height: 40px;
 	padding: 12px 0px 0px 12px;
-	color: #e9b628;
+	color: #116fe9;
 }
 
 .navbar-default .navbar-nav li a {
@@ -205,7 +205,7 @@ header .social-icon li a {
 }
 
 .navbar-default .navbar-nav>li>a.current {
-	color: #e9b628;
+	color: #116fe9;
 }
 
 .templatemo-nav {
@@ -241,7 +241,7 @@ header .social-icon li a {
 }
 
 #home h1 span {
-	color: #e9b628;
+	color: #116fe9;
 	font-weight: bold;
 }
 
@@ -260,7 +260,7 @@ header .social-icon li a {
 }
 
 #home .btn:hover {
-	background: #e9b628;
+	background: #116fe9;
 	border-color: transparent;
 }
 
@@ -318,7 +318,7 @@ header .social-icon li a {
 }
 
 #team .team-wrapper .team-des span {
-	color: #e9b628;
+	color: #116fe9;
 	display: block;
 	font-weight: bold;
 	padding-bottom: 12px;
@@ -354,14 +354,14 @@ header .social-icon li a {
 }
 
 #service h4 {
-	color: #e9b628;
+	color: #116fe9;
 	font-weight: 600;
 	padding-top: 10px;
 	padding-bottom: 14px;
 }
 
 .text-primary {
-	color: #e9b628;
+	color: #116fe9;
 }
 
 /* end service */
@@ -388,7 +388,7 @@ header .social-icon li a {
 }
 
 #portfolio .portfolio-thumb .portfolio-overlay {
-	background: #e9b628;
+	background: #116fe9;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -476,7 +476,7 @@ header .social-icon li a {
 }
 
 .social-icon li a:hover {
-	background: #e9b628;
+	background: #116fe9;
 	border-color: transparent;
 }
 
@@ -495,7 +495,7 @@ header .social-icon li a {
 	}
 
 	#portfolio .portfolio-thumb .portfolio-overlay {
-		background: #e9b628;
+		background: #116fe9;
 		top: 0;
 		left: 0;
 		right: 0;
