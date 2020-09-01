@@ -225,11 +225,11 @@ header .social-icon li a {
 /* start home */
 #home {
 	/* background: linear-gradient(135deg,#208379 20%,#051514 80%); */
-	background: url('../images/data.jpg') no-repeat;
+	background: url('../images/black-screen(1).jpg') no-repeat;
 	/* background-color: #a89932; */
 	background-size: cover;
-	padding-top: 80px;
-	padding-bottom: 50px;
+	padding-top: 160px;
+	padding-bottom: 100px;
 	min-height: 650px;
 }
 
