@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79254642-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-79254642-5');
+    </script>
+    
+    <title>Pimp My R-Markdown &#8211; Yan Holtz Homepage</title>
+    
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="July 2018 - 6 minutes read">
+    <meta name="keywords" content="Data,Dataviz,Datavisualization,Plot,Chart,Graph,R,Python,D3,Learning">
+    <meta name="author" content="Yan Holtz">
+    
+    <!-- Control appearance when share by social media -->
+    <meta property="og:title" content="Pimp My R-Markdown" />
+    <meta property="og:image" content="https://github.com/holtzy/data_to_viz/raw/master/img/section/rmd_logo.jpg" />
+    <meta property="og:description" content="July 2018 - 6 minutes read" />
+    <meta property='og:url' content="www.yan-holtz.com/pimpMyRmd.html" />
+    <meta property="og:type" content="website" />
+
+
+
+
+
+
+
+
+<style>
+.mytitle{
+  text-transform: uppercase;
+  font-family: 'Montserrat';
+  font-size: 200%;
+  font-weight: 500;
+  letter-spacing: 4px;
+  max-width: 600px;
+  margin-top: 2%;
+  }  
+  
+.text {
+  color: black;
+  position: absolute;
+  top: 30%;
+  right: 50%;
+  transform: translate(50%,-50%);
+  max-width: 600px;
+  padding: 2em 3em;
+}
+</style>
+
+
+<div>
+  <br>
+  <a href="http://www.yan-holtz.com/blog" style="text-align: left; vertical-align: top; margin-left: 5%;">&larr; Yan Holtz's blog</a>
+  <center><img src="IMG/rmd_logo.jpg"></center>
+  <center><p class="mytitle">Pimp My R-Markdown</p></center>
+  <center><p class="mysubtitle">July 2018 - 6 minutes read</p></center>
+</div>
+
+
+
+
+
+
+
+<title></title>
+
+<script src="libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="libs/bootstrap-3.3.5/css/lumen.min.css" rel="stylesheet" />
+<script src="libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="libs/navigation-1.1/tabsets.js"></script>
+<script src="libs/navigation-1.1/codefolding.js"></script>
+<link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
+
+
+
+
+
+
+<div class="fluid-row" id="header">
+
+<div class="btn-group pull-right">
+<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Show Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
+
+
+
+
+</div>
+
+
+<p><br><br><br></p>
+<div class="mycontent">
+<p><a href="https://rmarkdown.rstudio.com/">R markdown</a> creates interactive reports from <a href="https://www.r-project.org/">R code</a>. I’ve created a <a href="https://holtzy.github.io/Pimp-my-rmd/">document</a> that provides a few tips I use on a daily basis to improve the appearance of my html outputs (my memory aid). This document is built using R Markdown and hosted on <a href="https://github.com/holtzy/Pimp-my-rmd">Github</a>.</p>
+<p>You can <a href="https://holtzy.github.io/Pimp-my-rmd/">access it here</a>, and here is a list of the current tips that are displayed:</p>
+<p><br></p>
+<div class="row">
+<div class="col-md-6">
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#text-formatting">Text formating</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#horizontal-line">Horizontal line</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#auto-numbering">Chapter auto numbering</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#skip-line">Skip a line</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#center-image">Center an image</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#add-footer">Add footer or header</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#add-space">Add space before title</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#add-caption">Add caption to your figures</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#custom-caption">Custom caption</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#insert-equation">Insert equations</a></li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<div class="row">
+<div class="col-md-6">
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#2columns">2 figures in 2 columns</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#buttons">Use buttons or tabs for sub-chapters</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#DT">Use DT for tables- Hide code</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#hide-code">Highlight a piece of text with CSS</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#highlight">Cache code</a></li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#github-link">Add a github link in the corner of your document</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#link">Internal link</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#Anchor-URL-link">URL linking to a specific section</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#interactive">Use interactive graphics</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#template">Use a template</a></li>
+</ul>
+</div>
+</div>
+<p><br></p>
+<ul>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#online">Share it online</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#website">Compile several in a website</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#template-creation">Create template</a></li>
+<li><a href="https://holtzy.github.io/Pimp-my-rmd/#session">Add a session info</a></li>
+</ul>
+<p><br></p>
+<p>Of course this list is not exhaustive. If you know some tips that should be added, please advise me! You can comment this post or use the dedicated <a href="https://github.com/holtzy/Pimp-my-rmd">GitHub repository</a>.</p>
+<p>This page is linked with the <a href="http://www.r-graph-gallery.com/">R graph gallery</a>. You can also reach me on <a href="https://twitter.com/r_graph_gallery?lang=en">twitter</a>. Thanks to <a href="https://www.rstudio.com/">Rstudio</a> and to the people who contributed to create such an awesome tool.</p>
+</div>
+
+
+<!-- Insert code for DISQUS comments  -->
+
+      <div class="mycontent">
+        <div id="disqus_thread"></div>
+        <script>
+
+        var disqus_config = function () {
+        this.page.url = www.yan-holtz.com/graph/pimpMyRmd.html;  
+        this.page.identifier = pimpMyRmd; 
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://yan-holtz.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      </div>
+<!-- Insert code for DISQUS comments  -->
+    
+
+
+&nbsp;
+<hr />
+<p style="text-align: center;">A work by <a href="https://github.com/holtzy/">Yan Holtz</a> for <a href="https://data-to-viz.com">data-to-viz.com</a></p>
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+	<a href="https://twitter.com/r_graph_gallery?lang=en" class="fa fa-twitter"></a>
+	<a href="https://www.linkedin.com/in/yan-holtz-2477534a/" class="fa fa-linkedin"></a>
+	<a href="https://github.com/holtzy/" class="fa fa-github"></a>
+</p>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-79254642-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-79254642-3');
+</script>
+
+
+&nbsp;
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>
